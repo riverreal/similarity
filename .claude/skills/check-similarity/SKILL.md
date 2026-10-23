@@ -1,6 +1,6 @@
 ---
 name: check-similarity
-description: Detect duplicate code using AST-based similarity analysis. Auto-selects the right tool based on file types in the project (similarity-ts for TypeScript/JavaScript, similarity-py for Python, similarity-mbt for MoonBit, similarity-rs for Rust, etc).
+description: Detect duplicate code using AST-based similarity analysis. Auto-selects the right tool based on file types in the project (similarity-ts for TypeScript/JavaScript, similarity-py for Python, similarity-mbt for MoonBit, similarity-gd for GDScript, similarity-rs for Rust, etc).
 argument-hint: "[path] [--threshold 0.85] [--print]"
 allowed-tools: Bash(similarity-* *) Bash(cargo run -p similarity-* *) Read Grep Glob
 ---
@@ -20,6 +20,7 @@ Check the target path for file extensions:
 | `.ts`, `.tsx`, `.js`, `.jsx` | `similarity-ts` |
 | `.py` | `similarity-py` |
 | `.mbt` | `similarity-mbt` |
+| `.gd` | `similarity-gd` |
 | `.rs` | `similarity-rs` |
 | `.php` | `similarity-php` |
 | `.ex`, `.exs` | `similarity-elixir` |

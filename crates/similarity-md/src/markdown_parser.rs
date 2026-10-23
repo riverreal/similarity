@@ -90,7 +90,7 @@ impl MarkdownParser {
 
         for event in parser {
             match event {
-                Event::Start(Tag::Heading { level: _, .. }) => {
+                Event::Start(Tag::Heading { .. }) => {
                     // Save previous section if exists
                     if let Some(section) = current_section.take() {
                         sections.push(section);

@@ -131,7 +131,7 @@ fn index_function(
         eprintln!("Indexing function {}", func.name);
         eprintln!("Lines: {} - {}", func.start_line, func.end_line);
         eprintln!("Code length: {}", func_code.len());
-        eprintln!("First 100 chars: {}", &func_code.chars().take(100).collect::<String>());
+        eprintln!("First 100 chars: {}", func_code.chars().take(100).collect::<String>());
     }
 
     // Parse the function

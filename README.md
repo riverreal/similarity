@@ -9,6 +9,7 @@ High-performance code similarity detection tools written in Rust. Detects duplic
 | **similarity-ts**      | TypeScript/JavaScript     | ✅ **Production Ready** | Most mature and production-tested |
 | **similarity-py**      | Python                    | ⚠️ **Beta**             | Not production-tested yet         |
 | **similarity-rs**      | Rust                      | ⚠️ **Beta**             | Not production-tested yet         |
+| **similarity-gd**      | GDScript (Godot)          | 🧪 **Experimental**     | Early development stage           |
 | **similarity-elixir**  | Elixir                    | 🧪 **Experimental**     | Early development stage           |
 | **similarity-generic** | Go, Java, C/C++, C#, Ruby | 🧪 **Experimental**     | Early development stage           |
 | **similarity-md**      | Markdown                  | 🧪 **Experimental**     | Early development stage           |
@@ -79,6 +80,7 @@ The AI will analyze patterns and suggest refactoring strategies.
 ### Experimental
 
 - **similarity-elixir** - Elixir similarity detection 🧪 _Experimental_
+- **similarity-gd** - GDScript (Godot 4) similarity detection 🧪 _Experimental_ - Detects duplicate `func`s, including static functions and inner-class methods
 - **similarity-generic** - Generic similarity detection for Go, Java, C/C++, C#, Ruby 🧪 _Experimental_
 - **similarity-md** - Markdown similarity detection 🧪 _Experimental_
 - **similarity-css** - CSS/SCSS similarity detection 🧪 _Experimental_ - Detects duplicate styles and BEM variations
@@ -99,7 +101,7 @@ Each release uploads one archive per target:
 - `similarity-<tag>-x86_64-unknown-linux-gnu.tar.gz`
 - `similarity-<tag>-aarch64-apple-darwin.tar.gz`
 
-Each archive contains all CLI binaries (`similarity-ts`, `similarity-py`, `similarity-rs`, `similarity-elixir`, `similarity-generic`, `similarity-md`, `similarity-css`, `similarity-php`) plus `README.md` and `LICENSE`.
+Each archive contains all CLI binaries (`similarity-ts`, `similarity-py`, `similarity-rs`, `similarity-elixir`, `similarity-generic`, `similarity-md`, `similarity-css`, `similarity-php`, `similarity-gd`) plus `README.md` and `LICENSE`.
 
 ### TypeScript/JavaScript
 
@@ -139,6 +141,20 @@ cargo install similarity-elixir
 
 # Use the installed binary
 similarity-elixir --help
+```
+
+### GDScript
+
+```bash
+# Install from crates.io
+cargo install similarity-gd
+
+# Scan a Godot project for duplicate functions (.gd files)
+similarity-gd . --threshold 0.85 --min-lines 5
+
+# Show the code of each pair, or fail CI when duplicates exist
+similarity-gd scripts/ --print
+similarity-gd . --threshold 0.95 --fail-on-duplicates
 ```
 
 ### Other Languages (Go, Java, C/C++, C#, Ruby)
