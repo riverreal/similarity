@@ -17,6 +17,7 @@ pub enum Language {
     CSharp,
     Ruby,
     MoonBit,
+    GDScript,
     Unknown,
 }
 
@@ -35,6 +36,7 @@ impl Language {
             "cs" => Some(Language::CSharp),
             "rb" => Some(Language::Ruby),
             "mbt" => Some(Language::MoonBit),
+            "gd" => Some(Language::GDScript),
             _ => None,
         }
     }
@@ -120,6 +122,7 @@ mod tests {
         assert_eq!(Language::from_filename("test.php"), Some(Language::Php));
         assert_eq!(Language::from_filename("test.rs"), Some(Language::Rust));
         assert_eq!(Language::from_filename("test.go"), Some(Language::Go));
+        assert_eq!(Language::from_filename("player.gd"), Some(Language::GDScript));
         assert_eq!(Language::from_filename("test.txt"), None);
     }
 

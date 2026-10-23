@@ -17,7 +17,7 @@ permissions:
 env:
   BINARIES: >-
     similarity-ts similarity-py similarity-rs similarity-elixir
-    similarity-generic similarity-md similarity-css similarity-php
+    similarity-generic similarity-md similarity-css similarity-php similarity-gd
 
 jobs:
   build:

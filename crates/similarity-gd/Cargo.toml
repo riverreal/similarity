@@ -1,0 +1,32 @@
+[package]
+name = "similarity-gd"
+version = "0.5.1"
+edition = "2021"
+license = "MIT"
+description = "CLI tool for detecting code duplication in GDScript (Godot) projects"
+authors = ["mizchi"]
+repository = "https://github.com/mizchi/similarity"
+homepage = "https://github.com/mizchi/similarity"
+documentation = "https://docs.rs/similarity-gd"
+keywords = ["gdscript", "godot", "duplicate", "detection", "similarity"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "similarity-gd"
+path = "src/main.rs"
+
+[lib]
+name = "similarity_gd"
+
+[dependencies]
+similarity-core = { version = "0.5.1", path = "../core" }
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "1.0"
+rayon = "1.10"
+tree-sitter = { workspace = true }
+tree-sitter-gdscript = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.0"
+tempfile = "3.0"
