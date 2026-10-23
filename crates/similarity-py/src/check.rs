@@ -143,7 +143,7 @@ fn display_all_results(
                     &format!(
                         "{} {}",
                         if func1.is_method { "method" } else { "function" },
-                        &func1.name
+                        func1.name
                     ),
                     func1.start_line,
                     func1.end_line
@@ -153,7 +153,7 @@ fn display_all_results(
                     &format!(
                         "{} {}",
                         if func2.is_method { "method" } else { "function" },
-                        &func2.name
+                        func2.name
                     ),
                     func2.start_line,
                     func2.end_line
